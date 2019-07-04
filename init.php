@@ -11,7 +11,7 @@ class Pinboard extends Plugin {
         function about() {
                 return array(1.2,
                         "Share article on Pinboard",
-                        "m.s");
+                        "m.s/jglemza");
         }
 
         function get_js() {
@@ -39,7 +39,7 @@ class Pinboard extends Plugin {
 										FROM ttrss_entries, ttrss_user_entries 
 										WHERE id = ? AND ref_id = id  AND owner_uid = ?");
 			$sth->execute([$id, $_SESSION['uid']]);
-			
+
 			if ($row = $sth->fetch()) {
 				$title = truncate_string(strip_tags($row['title']), 100, '...');
 				$article_link = $row['link'];
