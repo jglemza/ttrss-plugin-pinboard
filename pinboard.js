@@ -5,7 +5,7 @@ function shareArticleToPinboard(id) {
             console.log(query);
 
             var d = new Date();
-  var ts = d.getTime();
+            var ts = d.getTime();
 
             var w = window.open('backend.php?op=backend&method=loading', 'ttrss_tweet',
                     "status=0,toolbar=0,location=0,width=650,height=350,scrollbars=1,menubar=0");
