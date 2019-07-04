@@ -30,24 +30,24 @@ class Pinboard extends Plugin {
         }
 
         function getInfo() {
-				$id = db_escape_string($_REQUEST['id']);
-				$query = "SELECT title, link FROM ttrss_entries, ttrss_user_entries WHERE id = '$id' AND ref_id = id AND owner_uid = " .$_SESSION['uid'];
+				//$id = db_escape_string($_REQUEST['id']);
+				//$query = "SELECT title, link FROM ttrss_entries, ttrss_user_entries WHERE id = '$id' AND ref_id = id AND owner_uid = " .$_SESSION['uid'];
 				
-				/*
+				
 				$sth = $this->pdo->prepare("SELECT title, link
 					FROM ttrss_entries, ttrss_user_entries
 					WHERE id = ? AND ref_id = id AND owner_uid = ?");
 
 				$sth->execute($_REQUEST['id'], $_SESSION['uid']);
-				*/
+				
 
                 //$result = db_query("SELECT title, link
                 //                FROM ttrss_entries, ttrss_user_entries
                 //                WHERE id = '$id' AND ref_id = id AND owner_uid = " .$_SESSION['uid']);
 
-				$result = $this->pdo->query($query);
+				//$result = $this->pdo->query($query);
 
-                if ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                if ($row = $sth->fetch()) {
                         $title = truncate_string(strip_tags($row['title']),
                                 100, '...');
                         $article_link = $row['link'];
