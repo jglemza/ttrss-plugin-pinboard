@@ -27,7 +27,11 @@ class Pinboard extends Plugin {
                         title='".__('Share on Pinboard')."'>";
 
                 return $rv;
-        }
+		}
+		
+		function get_pdo() {
+			return $this->pdo;
+		}
 
         function getInfo() {
 				$id = db_escape_string($_REQUEST['id']);
