@@ -1,6 +1,6 @@
 function pinboardSaveArticle(id) {
     try {
-        var query = "?op=pluginhandler&plugin=pinboard&method=getInfo&id=" + param_escape(id);
+        var query = "?op=pluginhandler&plugin=pinboard&method=getInfo&id=" + id;
 
         console.log(query);
 
@@ -15,9 +15,9 @@ function pinboardSaveArticle(id) {
             onComplete: function(transport) {
                 var ti = JSON.parse(transport.responseText);
 
-                var share_url = "http://pinboard.in/add/?" + 
-                    "&title=" + param_escape(ti.title) +
-                    "&url=" + param_escape(ti.link);
+                var share_url = "https://pinboard.in/add/?" + 
+                    "&title=" + ti.title +
+                    "&url=" + ti.link;
 
                 w.location.href = share_url;
 

@@ -23,7 +23,7 @@ class Pinboard extends Plugin {
 	function hook_article_button($line) {
 		$article_id = $line["id"];
 
-		$rv = "<img src=\"plugins/pinboard/pinboard.png\"
+		$rv = "<img src=\"plugins.local/pinboard/pinboard.png\"
 			class='tagsPic' style=\"cursor : pointer\"
 			onclick=\"pinboardSaveArticle($article_id)\"
 			title='".__('Save on Piboard')."'>";
