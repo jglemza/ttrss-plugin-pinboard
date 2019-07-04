@@ -50,4 +50,3 @@ class Pinboard extends Plugin {
 
 
 }
-?>
