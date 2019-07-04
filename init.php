@@ -47,7 +47,7 @@ class Pinboard extends Plugin {
 
 				//$result = $this->pdo->query($query);
 
-                if ($row = $sth->fetch()) {
+                if ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
                         $title = truncate_string(strip_tags($row['title']),
                                 100, '...');
                         $article_link = $row['link'];
